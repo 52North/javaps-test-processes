@@ -47,6 +47,8 @@ public class EchoProcess {
     private OwsBoundingBox boundingboxInput;
     private OwsBoundingBox boundingboxOutput;
 
+    private int duration;
+
     @Execute
     public void echo() {
 
@@ -70,6 +72,14 @@ public class EchoProcess {
             log.debug("No boundingbox input");
         }
 
+        if(duration != 0) {
+            try {
+                Thread.sleep(duration);
+            } catch (InterruptedException e) {
+                log.error("Could not sleep for: " + duration, e);
+            }
+        }
+
         log.debug("Finished echo process, literal output is '{}', complex output is : {}", literalOutput, complexOutput);
     }
 
@@ -78,12 +88,17 @@ public class EchoProcess {
         return literalOutput;
     }
 
-    @LiteralInput(identifier = "literalInput", maxOccurs = 1)
+    @LiteralInput(identifier = "literalInput", minOccurs = 0, maxOccurs= 2)
     public void setLiteralInput(List<String> literalInput) {
         this.literalInput = literalInput;
     }
 
-    @BoundingBoxInput(defaultCRSString="EPSG:4326", identifier = "boundingboxInput")
+    @LiteralInput(identifier = "duration", minOccurs = 0, maxOccurs= 2)
+    public void setLiteralInput(int duration) {
+        this.duration = duration;
+    }
+
+    @BoundingBoxInput(defaultCRSString="EPSG:4326", minOccurs = 0, maxOccurs= 2, identifier = "boundingboxInput")
     public void setBoundingBox(OwsBoundingBox data){
         this.boundingboxInput = data;
     }
@@ -98,7 +113,7 @@ public class EchoProcess {
         return complexOutput;
     }
 
-    @ComplexInput(identifier="complexInput", binding=GenericXMLDataBinding.class)
+    @ComplexInput(identifier="complexInput", minOccurs = 0, maxOccurs= 2, binding=GenericXMLDataBinding.class)
     public void setComplexInput(List<XmlObject> complexInput) {
         this.complexInput = complexInput;
     }
