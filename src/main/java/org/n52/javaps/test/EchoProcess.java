@@ -88,17 +88,17 @@ public class EchoProcess {
         return literalOutput;
     }
 
-    @LiteralInput(identifier = "literalInput", minOccurs = 0, maxOccurs= 2)
+    @LiteralInput(identifier = "literalInput", minOccurs = 0, maxOccurs= 1)
     public void setLiteralInput(List<String> literalInput) {
         this.literalInput = literalInput;
     }
 
-    @LiteralInput(identifier = "duration", minOccurs = 0, maxOccurs= 2)
+    @LiteralInput(identifier = "duration", minOccurs = 0, maxOccurs= 1)
     public void setLiteralInput(int duration) {
         this.duration = duration;
     }
 
-    @BoundingBoxInput(defaultCRSString="EPSG:4326", minOccurs = 0, maxOccurs= 2, identifier = "boundingboxInput")
+    @BoundingBoxInput(defaultCRSString="EPSG:4326", minOccurs = 0, maxOccurs= 1, identifier = "boundingboxInput")
     public void setBoundingBox(OwsBoundingBox data){
         this.boundingboxInput = data;
     }
