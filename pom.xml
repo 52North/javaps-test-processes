@@ -42,7 +42,7 @@
 	<scm>
 		<url>https://github.com/52North/javaps-test-processes</url>
 		<connection>scm:git:git://github.com/52North/javaps-test-processes.git</connection>
-		<developerConnection>scm:git:ssh://github.com/52North/javaps-test-processes.git</developerConnection>
+		<developerConnection>scm:git:ssh://git@github.com/52North/javaps-test-processes.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
