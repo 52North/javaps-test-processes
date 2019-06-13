@@ -41,8 +41,8 @@
 
 	<scm>
 		<url>https://github.com/52North/javaps-test-processes</url>
-		<connection>scm:git:https://github.com/52North/javaps-test-processes.git</connection>
-		<developerConnection>scm:git:https://github.com/52North/javaps-test-processes.git</developerConnection>
+		<connection>scm:git:git://github.com/52North/javaps-test-processes.git</connection>
+		<developerConnection>scm:git:ssh://github.com/52North/javaps-test-processes.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
