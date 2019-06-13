@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 52°North Initiative for Geospatial Open Source
+ * Copyright 2019 52°North Initiative for Geospatial Open Source
  * Software GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,24 +29,33 @@ import org.n52.javaps.io.data.binding.complex.GenericFileDataBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Algorithm(version = "1.1.0", title="for testing multiple inputs by reference")
+@Algorithm(
+        version = "1.1.0",
+        title = "for testing multiple inputs by reference")
 public class MultiReferenceInputAlgorithm {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MultiReferenceInputAlgorithm.class);
+
+    private GenericFileData result;
+
+    private List<GenericFileData> data;
 
     public MultiReferenceInputAlgorithm() {
         super();
     }
 
-    private GenericFileData result;
-    private List<GenericFileData> data;
-
-    @ComplexOutput(identifier = "result", binding = GenericFileDataBinding.class)
+    @ComplexOutput(
+            identifier = "result",
+            binding = GenericFileDataBinding.class)
     public GenericFileData getResult() {
         return result;
     }
 
-    @ComplexInput(identifier = "data", binding = GenericFileDataBinding.class, minOccurs=1, maxOccurs=2)
+    @ComplexInput(
+            identifier = "data",
+            binding = GenericFileDataBinding.class,
+            minOccurs = 1,
+            maxOccurs = 2)
     public void setData(List<GenericFileData> data) {
         this.data = data;
     }
