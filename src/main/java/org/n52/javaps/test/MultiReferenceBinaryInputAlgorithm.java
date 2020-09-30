@@ -29,24 +29,33 @@ import org.n52.javaps.io.data.binding.complex.GenericFileDataBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Algorithm(version = "1.1.0", title="for testing multiple binary inputs by reference")
+@Algorithm(
+        version = "1.1.0",
+        title = "for testing multiple binary inputs by reference")
 public class MultiReferenceBinaryInputAlgorithm {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MultiReferenceBinaryInputAlgorithm.class);
+
+    private GenericFileData result;
+
+    private List<GenericFileData> data;
 
     public MultiReferenceBinaryInputAlgorithm() {
         super();
     }
 
-    private GenericFileData result;
-    private List<GenericFileData> data;
-
-    @ComplexOutput(identifier = "result", binding = GenericFileDataBinding.class)
+    @ComplexOutput(
+            identifier = "result",
+            binding = GenericFileDataBinding.class)
     public GenericFileData getResult() {
         return result;
     }
 
-    @ComplexInput(identifier = "data", binding = GenericFileDataBinding.class, minOccurs=1, maxOccurs=2)
+    @ComplexInput(
+            identifier = "data",
+            binding = GenericFileDataBinding.class,
+            minOccurs = 1,
+            maxOccurs = 2)
     public void setData(List<GenericFileData> data) {
         this.data = data;
     }
@@ -64,7 +73,7 @@ public class MultiReferenceBinaryInputAlgorithm {
 
             f = gfd.getBaseFile(false);
 
-            if(!f.exists()){
+            if (!f.exists()) {
                 throw new RuntimeException("Input file does not exist for identifier data.");
             }
         }
