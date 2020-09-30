@@ -25,7 +25,7 @@
   </parent>
   <groupId>org.n52.geoprocessing</groupId>
   <artifactId>javaps-test-processes</artifactId>
-  <version>3</version>
+  <version>4-SNAPSHOT</version>
   
   	<developers>
 		<developer>
@@ -43,7 +43,7 @@
 		<url>https://github.com/52North/javaps-test-processes</url>
 		<connection>scm:git:git://github.com/52North/javaps-test-processes.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/52North/javaps-test-processes.git</developerConnection>
-		<tag>v3</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
