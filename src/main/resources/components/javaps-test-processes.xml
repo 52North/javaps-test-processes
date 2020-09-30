@@ -27,5 +27,6 @@
 
 	<bean id="echoprocess" class="org.n52.javaps.test.EchoProcess" />
 	<bean id="multireferenceinputalgorithm" class="org.n52.javaps.test.MultiReferenceInputAlgorithm" />
+	<bean id="multireferencebinaryinputalgorithm" class="org.n52.javaps.test.MultiReferenceBinaryInputAlgorithm" />
 
 </beans>
