@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 52°North Initiative for Geospatial Open Source
+ * Copyright 2016-2022 52°North Initiative for Geospatial Open Source
  * Software GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -94,7 +94,7 @@ public class EchoProcess {
     }
 
     @LiteralInput(
-            identifier = "literalInput",
+            identifier = "literalInput", allowedValues = {"test1", "test2"},
             minOccurs = 0,
             maxOccurs = 1)
     public void setLiteralInput(List<String> literalInput) {
